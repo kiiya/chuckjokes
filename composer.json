@@ -1,0 +1,26 @@
+{
+    "name": "kiiya/chuckjokes",
+    "description": "Chuckjokes is a php package that adds Chuck Jokes to your php application",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kiiya",
+            "email": "kiiyaerick@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "kiiya\\chuckjokes\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "kiiya\\chuckjokes\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2"
+    }
+}
