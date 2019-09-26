@@ -1,16 +1,28 @@
-# Chuck Jokes
+# ChuckJokes
+
+Get random Chuck Norris jokes
+
 ## Installation
-### Clone this repository
-```
-git clone https://github.com/kiiya/chuckjokes
 
-```
-### Additional installation instructions
+Use the composer [pip](https://pip.pypa.io/en/stable/) to install ChuckJokes.
+
+```bash
 composer require kiiya/chuckjokes
+```
 
-## Operating
+## Usage
 
-## Troubleshooting
-## Changelog
-## Licence
-Licence: MIT License
+```php
+use Kiiya\ChuckJokes\JokeFactory;
+
+$jokes = new JokeFactory;
+$joke = $jokes->getRandomJoke();
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](./LICENSE.md)
