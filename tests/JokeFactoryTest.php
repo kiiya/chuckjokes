@@ -2,36 +2,30 @@
 
 namespace kiiya\chuckjokes\tests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use kiiya\chuckjokes\JokeFactory;
+use GuzzleHttp\Handler\MockHandler;
 
 class JokeFactoryTest extends TestCase
 {
     /** @test */
     public function it_returns_a_random_joke()
     {
-        $jokes = new JokeFactory([
-            'This is a joke',
+        $mock = new MockHandler([
+            new Response(200, [], '{"type": "success", "value": { "id": 140, "joke": "Chuck Norris built a better mousetrap, but the world was too frightened to beat a path to his door.", "categories": [] } }'),
         ]);
-        $joke = $jokes->getRandomJoke();
 
-        $this->assertSame('This is a joke', $joke);
-    }
+        $handler = HandlerStack::create($mock);
 
-    /** @test */
-    public function it_returns_a_predefined_joke()
-    {
-        $chuckNorrisJokes = [
-            'Chuck Norris does not wear a condom. Because there is no such thing as protection from Chuck Norris.',
-            'Chuck Norris tears cure cancer. Too bad he has never cried.',
-            'Chuck Norris counted to infinity... Twice.',
-            'If you can see Chuck Norris, he can see you. If you can\'t see Chuck Norris you may be only seconds away from death.',
-        ];
+        $client = new Client(['handler' => $handler]);
 
-        $jokes = new JokeFactory();
+        $jokes = new JokeFactory($client);
 
         $joke = $jokes->getRandomJoke();
 
-        $this->assertContains($joke, $chuckNorrisJokes);
+        $this->assertSame('Chuck Norris built a better mousetrap, but the world was too frightened to beat a path to his door.', $joke);
     }
 }
