@@ -2,9 +2,8 @@
 
 namespace Kiiya\ChuckJokes;
 
-use Kiiya\ChuckJokes\Console\ChuckJoke;
-use Kiiya\ChuckJokes\JokeFactory;
 use Illuminate\Support\ServiceProvider;
+use Kiiya\ChuckJokes\Console\ChuckJoke;
 
 class ChuckJokesServiceProvider extends ServiceProvider
 {
@@ -12,7 +11,7 @@ class ChuckJokesServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                ChuckJoke::class
+                ChuckJoke::class,
             ]);
         }
     }
