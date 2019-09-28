@@ -1,12 +1,12 @@
 <?php
 
-namespace kiiya\chuckjokes\tests;
+namespace Kiiya\ChuckJokes\Tests;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use kiiya\chuckjokes\JokeFactory;
+use Kiiya\ChuckJokes\JokeFactory;
 use GuzzleHttp\Handler\MockHandler;
 
 class JokeFactoryTest extends TestCase
