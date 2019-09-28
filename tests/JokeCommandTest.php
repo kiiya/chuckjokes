@@ -3,14 +3,14 @@
  * Created by PhpStorm.
  * User: kiiya
  * Date: 2019-09-28
- * Time: 13:09
+ * Time: 13:09.
  */
 
 namespace Kiiya\ChuckJokes\Tests;
 
-use Illuminate\Support\Facades\Artisan;
-use Kiiya\ChuckJokes\Facades\Chuck;
 use Orchestra\Testbench\TestCase;
+use Kiiya\ChuckJokes\Facades\Chuck;
+use Illuminate\Support\Facades\Artisan;
 use Kiiya\ChuckJokes\ChuckJokesServiceProvider;
 
 class JokeCommandTest extends TestCase
@@ -18,14 +18,14 @@ class JokeCommandTest extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            ChuckJokesServiceProvider::class
+            ChuckJokesServiceProvider::class,
         ];
     }
 
     protected function getPackageAliases($app)
     {
         return [
-            'Chuck' => Chuck::class
+            'Chuck' => Chuck::class,
         ];
     }
 
