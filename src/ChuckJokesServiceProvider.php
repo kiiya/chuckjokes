@@ -2,6 +2,7 @@
 
 namespace Kiiya\ChuckJokes;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Kiiya\ChuckJokes\Console\ChuckJoke;
 
@@ -14,6 +15,10 @@ class ChuckJokesServiceProvider extends ServiceProvider
                 ChuckJoke::class,
             ]);
         }
+
+        Route::get('chuck-joke', function () {
+            return 'success';
+        });
     }
 
     public function register()

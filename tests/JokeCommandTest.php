@@ -44,4 +44,11 @@ class JokeCommandTest extends TestCase
 
         $this->assertSame('Some joke'.PHP_EOL, $output);
     }
+
+    /** @test */
+    public function the_joke_route_can_be_accessed()
+    {
+        $this->get('/chuck-joke')
+            ->assertStatus(200);
+    }
 }
