@@ -1,6 +1,6 @@
 <?php
 
-namespace kiiya\chuckjokes;
+namespace Kiiya\ChuckJokes;
 
 use GuzzleHttp\Client;
 

@@ -14,15 +14,26 @@
     },
     "autoload": {
         "psr-4": {
-            "kiiya\\chuckjokes\\": "src/"
+            "Kiiya\\ChuckJokes\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "kiiya\\chuckjokes\\Tests\\": "tests/"
+            "Kiiya\\ChuckJokes\\Tests\\": "tests/"
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.2"
+        "phpunit/phpunit": "^8.2",
+        "orchestra/testbench": "~3.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kiiya\\ChuckJokes\\ChuckJokesServiceProvider"
+            ],
+            "aliases": {
+                "Chuck": "Kiiya\\ChuckJokes\\Facades\\Chuck"
+            }
+        }
     }
 }
