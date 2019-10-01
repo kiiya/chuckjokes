@@ -48,6 +48,10 @@ class JokeCommandTest extends TestCase
     /** @test */
     public function the_joke_route_can_be_accessed()
     {
+        Chuck::shouldReceive('getRandomJoke')
+            ->once()
+            ->andReturn('Some joke');
+
         $this->get('/chuck-joke')
             ->assertStatus(200);
     }
